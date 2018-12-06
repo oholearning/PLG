@@ -1,0 +1,10 @@
+venv
+src/config/config.json
+
+db.sqlite3
+*.sqlite3
+
+*.pyc
+__pycache__
+
+Pipfile.lock
