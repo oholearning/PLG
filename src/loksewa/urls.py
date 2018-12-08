@@ -21,4 +21,13 @@ urlpatterns = [
     # path(r'^jet/', include('jet.urls', 'jet')),
     path(r'jet/', include('jet.urls')),
     path(r'jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
+    path('summernote/', include('django_summernote.urls')),
+
 ]
+
+# This one is for django summernote when debug= true , not needed in production
+from django.conf import settings
+from django.conf.urls.static import static
+ 
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

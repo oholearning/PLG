@@ -66,6 +66,8 @@ LOKSEWA_APP = [
 THIRD_PARTY_APP = [
     
 ]
+# This is for rich text box 
+INSTALLED_APPS += ('django_summernote', )
 
 INSTALLED_APPS += LOKSEWA_APP 
 INSTALLED_APPS += THIRD_PARTY_APP
@@ -166,6 +168,9 @@ STATICFILES_DIRS = [
     ('static'),
 ]
 
+# This one is for django summernote
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, config["MEDIA_ROOT"])
 
 # for django admin reorder app
 

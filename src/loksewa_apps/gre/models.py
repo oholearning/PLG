@@ -14,6 +14,10 @@ from loksewa_apps.core.models import (
     Answer_With_Text_Input,
     Answer_Multiple_selection,
     Answer_Multiple_selection_With_Five_Option,
+    # verbal,quant,essay set
+    Quant_Set,
+    Verbal_Set,
+    Essay_Set
 )
 # Create your models here.
 
@@ -221,3 +225,27 @@ class QuantativeDataAnalysisQuestion(Quant_Data_Analysis_Question):
     def get_admin_url(self):
         return reverse("admin:%s_%s_change" %(self._meta.app_label, self._meta.model_name), args=(self.pk,))
 
+# lets add the sets:
+class QuantativeSet(Quant_Set):
+    
+    def updated_date_string(self):
+        return self.updated_date
+    
+    def get_admin_url(self):
+        return reverse("admin:%s_%s_change" %(self._meta.app_label, self._meta.model_name), args=(self.pk,))
+
+class VerbalSet(Verbal_Set):
+    
+    def updated_date_string(self):
+        return self.updated_date
+    
+    def get_admin_url(self):
+        return reverse("admin:%s_%s_change" %(self._meta.app_label, self._meta.model_name), args=(self.pk,))
+
+class EssaySet(Essay_Set):
+    
+    def updated_date_string(self):
+        return self.updated_date
+    
+    def get_admin_url(self):
+        return reverse("admin:%s_%s_change" %(self._meta.app_label, self._meta.model_name), args=(self.pk,))
